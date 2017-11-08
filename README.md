@@ -7,12 +7,12 @@ If you are interested in using this bot
 2) Run npm install in the local directory. 
 3) Create an app on apps.twitter.com
 4) Create a new local file in the base bot directory, titled .config.js, which contains the following (consumer keys & access tokens come from apps.twitter.com):
-	 module.exports = {
+	 < module.exports = {
 	   consumer_key: 'YOUR-TWITTER-KEY-HERE',
 	   consumer_secret: 'YOUR-TWITTER-SECRET-HERE',
 	   access_token: 'YOUR-TWITTER-ACCESS-TOKEN-HERE',
 	   access_token_secret: 'YOUR-TWITTER-TOKEN-SECRET-HERE'
-		}
+		} >
 5) Launch the node command line, navigate to the directory, and type in npm start. Voila, you should be working!
 
 Tips: 

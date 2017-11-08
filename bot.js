@@ -5,10 +5,12 @@ var Twitter = new twit(config);
 
 var mySearch = function(){
   rtTerms = ['win tickets rt', 'win tix rt' , 'win pair rt', '#WinItWednesday' , '#FreebieFriday']
+  var currentDate = new Date(Date.now());
+  var formatDate = currentDate.toUTCString();
+  console.log(`Current Date is ${formatDate}`);
   for (var i in rtTerms)
   {
     var params =rtTerms[i];
-    console.log(params);
     //  retweet(params)
     retweet(params)
   }
@@ -19,7 +21,7 @@ var retweet = function(params) {
     q: params,
     result_type: 'recent',
     lang: 'en',
-    geocode:'39.8,-95.538,2200km'
+    geocode:'40.2,-77.2,500mi'
   }
 
   Twitter.get('search/tweets', params, function(err, data) {

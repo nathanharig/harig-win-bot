@@ -77,14 +77,17 @@ var retweet = function(params) {
 
 var followUser = function (screenName, retweeted, params)
 {
+  var formatText = new String(retweeted.text);
+  var someText = formatText.replace(/(\r\n|\n|\r)/gm,"");
   Twitter.post('friendships/create',
   { screen_name: screenName,
     follow: "true"
   }, function (err, resp) {
     if (err) {
-      return console.log(`~~~ ERROR with ${screenName} ~~~ \n // attempted retweet of ${retweeted.text} from ${retweeted.created_at} // \n !!!! error message = ${err} !!!! \n`);
+
+      return console.log(`~~~ ERROR with ${screenName} ~~~ \n // attempted retweet of ${someText} from ${retweeted.created_at} // \n !!!! error message = ${err} !!!! \n`);
     }
-    console.log(`\n ||||| Param- ${params.q} \n ||||  ${resp.following} status following ${resp.screen_name} \n ||| for  ${retweeted.text} \n || originally sent ${retweeted.created_at} \n  `);
+    console.log(`\n ||||| Param- ${params.q} \n ||||  ${resp.following} status following ${resp.screen_name} \n ||| for  ${someText} \n || originally sent ${retweeted.created_at} \n  `);
   });
 }
 

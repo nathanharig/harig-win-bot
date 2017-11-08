@@ -1,0 +1,16 @@
+{
+  "name": "harig-win-bot",
+  "version": "1.0.0",
+  "description": "a bot for twitter",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Harig",
+  "license": "MIT",
+  "dependencies": {
+    "node-twitter-bot": "^0.1.0",
+    "twit": "^2.2.9"
+  }
+}
